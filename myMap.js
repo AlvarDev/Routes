@@ -3,6 +3,8 @@
 *****************************************************/
 var database;
 var database2;
+var back;
+var sentido;
 
 /*****************************************************
 * Google Map we use in the front end
@@ -81,6 +83,7 @@ function initialize() {
 }
 
 function setPoints(){
+  pos = 0;
     $.each(database, function(i, point) {
       point.LAT = point.LAT.replace(",", ".");
       point.LON = point.LON.replace(",", ".");
@@ -92,12 +95,14 @@ function setPoints(){
     });
 
 
-    //database.sort(compare);
+
     $.each(database, function(i, point) {
         routeLine.push({lat: parseFloat(point.LAT), lng: parseFloat(point.LON)});
         //getMarker(point, i).setMap(map);
     });
 
+    database2.sort(compare);
+    sentido = database2.length > 0 ? database2[0].SENTIDO : "";
     $.each(database2, function(i, point) {
         //routeLine.push({lat: parseFloat(point.LAT), lng: parseFloat(point.LON)});
         getMarker(point, i).setMap(map);
@@ -114,17 +119,20 @@ function setPoints(){
 }
 
 function compare(a,b) {
-  if (a.NUM < b.NUM)
+  if (a.SEQ < b.SEQ)
     return -1;
-  if (a.NUM > b.NUM)
+  if (a.SEQ > b.SEQ)
     return 1;
   return 0;
 }
 
 function getMarker (item, number) {
 	var latLng = new google.maps.LatLng(item.LAT, item.LON);
+  var iconURL = sentido == item.SENTIDO ?
+                "http://maps.google.com/mapfiles/ms/icons/green-dot.png" :
+                "http://maps.google.com/mapfiles/ms/icons/red-dot.png";
 
-	var marker = new google.maps.Marker({position: latLng});
+	var marker = new google.maps.Marker({position: latLng, icon: iconURL});
 	marker.addListener('click', function() {
    		var contentString ='<strong>'+item.NOME+'</strong> <br> '+item.SEQ;
    		var infowindow = new google.maps.InfoWindow({content: contentString});
