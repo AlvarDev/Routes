@@ -1,0 +1,220 @@
+/**
+* This JSON was published on GitHub as a temporal API
+* https://raw.githubusercontent.com/AlvarDev/HostJson/master/optimized.json
+*
+* It's an array of routes (in this case it just has one route: Terminal Boa Vista - Estação Central)
+* - each route has a name and an array of points (lat lng)
+* - each point has a name, type, lat and lng,
+*   if the type is 'stop' the point is an station (estação, terminal, etc) an a marker is set.
+*   if the type is 'leg' is a poin of the route to create the path on the map
+*
+* IMPORTANT: The order of the points is exactly like the real life (e.g. leg-leg-stop-leg-leg)
+* it will allow to measure the distance between stops.
+**/
+{
+  "routes": [
+    {
+      "name": "Ruta A",
+      "points": [
+        {
+          "type": "leg",
+          "name": "",
+          "lat": -25.393545,
+          "lng": -49.240584
+        },
+        {
+          "type": "leg",
+          "name": "",
+          "lat": -25.395265,
+          "lng": -49.242131
+        },
+        {
+          "type": "stop",
+          "name": "Estação Tubo Gago Coutinho",
+          "lat": -25.396546,
+          "lng": -49.243395
+        },
+        {
+          "type": "leg",
+          "name": "",
+          "lat": -25.397358,
+          "lng": -49.244054
+        },
+        {
+          "type": "stop",
+          "name": "Estação Tubo Holanda",
+          "lat": -25.399600,
+          "lng": -49.246211
+        },
+        {
+          "type": "leg",
+          "name": "",
+          "lat": -25.400100,
+          "lng": -49.246636
+        },
+        {
+          "type": "stop",
+          "name": "Estação Tubo Antônio Cavalheiros",
+          "lat": -25.403251,
+          "lng": -49.249570
+        },
+        {
+          "type": "leg",
+          "name": "",
+          "lat": -25.404033,
+          "lng": -49.250268
+        },
+        {
+          "type": "leg",
+          "name": "",
+          "lat": -25.406026,
+          "lng": -49.252121
+        },
+        {
+          "type": "leg",
+          "name": "",
+          "lat": -25.406147,
+          "lng": -49.252418
+        },
+        {
+          "type": "stop",
+          "name": "Terminal Cabral",
+          "lat": -25.406593,
+          "lng": -49.252646
+        },
+        {
+          "type": "leg",
+          "name": "",
+          "lat": -25.406887,
+          "lng": -49.253135
+        },
+        {
+          "type": "leg",
+          "name": "",
+          "lat": -25.407266,
+          "lng": -49.253288
+        },
+        {
+          "type": "stop",
+          "name": "Estação Tubo Bom Jesus",
+          "lat": -25.409817,
+          "lng": -49.255631
+        },
+        {
+          "type": "stop",
+          "name": "Estação Tubo Moisés Marcondes",
+          "lat": -25.412396,
+          "lng": -49.257939
+        },
+        {
+          "type": "leg",
+          "name": "",
+          "lat": -25.413786,
+          "lng": -49.259296
+        },
+        {
+          "type": "stop",
+          "name": "Estação Tubo Constantino Marochi",
+          "lat": -25.416122,
+          "lng": -49.261505
+        },
+        {
+          "type": "stop",
+          "name": "Estação Tubo Maria Clara",
+          "lat": -25.419422,
+          "lng": -49.264560
+        },
+        {
+          "type": "leg",
+          "name": "",
+          "lat": -25.420751,
+          "lng": -49.265826
+        },
+        {
+          "type": "leg",
+          "name": "",
+          "lat": -25.422505,
+          "lng": -49.266693
+        },
+        {
+          "type": "stop",
+          "name": "Estação Tubo Passeio Público",
+          "lat": -25.423943,
+          "lng": -49.268393
+        },
+        {
+          "type": "leg",
+          "name": "",
+          "lat": -25.424228,
+          "lng": -49.268755
+        },
+        {
+          "type": "leg",
+          "name": "",
+          "lat": -25.424420,
+          "lng": -49.268846
+        },
+        {
+          "type": "leg",
+          "name": "",
+          "lat": -25.424974,
+          "lng": -49.268749
+        },
+        {
+          "type": "leg",
+          "name": "",
+          "lat": -25.426393,
+          "lng": -49.268597
+        },
+        {
+          "type": "leg",
+          "name": "",
+          "lat": -25.426431,
+          "lng": -49.268653
+        },
+        {
+          "type": "leg",
+          "name": "",
+          "lat": -25.427950,
+          "lng": -49.268485
+        },
+        {
+          "type": "leg",
+          "name": "",
+          "lat": -25.428307,
+          "lng": -49.268415
+        },
+        {
+          "type": "leg",
+          "name": "",
+          "lat": -25.429439,
+          "lng": -49.267894
+        },
+        {
+          "type": "leg",
+          "name": "",
+          "lat": -25.429640,
+          "lng": -49.267749
+        },
+        {
+          "type": "leg",
+          "name": "",
+          "lat": -25.429873,
+          "lng": -49.267634
+        },
+        {
+          "type": "leg",
+          "name": "",
+          "lat": -25.429986,
+          "lng": -49.267590
+        },
+        {
+          "type": "stop",
+          "name": "Estação Central",
+          "lat": -25.430004,
+          "lng": -49.267603
+        }
+      ]
+    }
+  ]
+}
