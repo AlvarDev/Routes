@@ -6,6 +6,9 @@ var database2;
 var back;
 var sentido;
 
+var load1 = false;
+var load2 = false;
+
 /*****************************************************
 * Google Map we use in the front end
 *****************************************************/
@@ -34,6 +37,10 @@ $(document).ready(function() {
          //si la peticion es exitosa, se ejecuta el siguiente codigo
          success:  function (response) {
            database = response;
+           load1 = true;
+           if(load1 && load2){
+             google.maps.event.addDomListener(window, 'load', initialize);
+           }
          },
 
          //si la peticion no es exitosa se ejecuta el siguiente codigo
@@ -51,6 +58,10 @@ $(document).ready(function() {
            //si la peticion es exitosa, se ejecuta el siguiente codigo
            success:  function (response) {
              database2 = response;
+             load2 = true;
+             if(load1 && load2){
+               google.maps.event.addDomListener(window, 'load', initialize);
+             }
            },
 
            //si la peticion no es exitosa se ejecuta el siguiente codigo
@@ -66,13 +77,13 @@ $(document).ready(function() {
 * Initialize the map, the clusters, the polygons,
 * the Slider for years range and the components
 *****************************************************/
-google.maps.event.addDomListener(window, 'load', initialize);
+//google.maps.event.addDomListener(window, 'load', initialize);
 
 function initialize() {
   var mapCanvas = document.getElementById('map');
   var mapOptions = {
-      center: new google.maps.LatLng(-25.409920, -49.264420),
-      zoom: 14,
+      center: new google.maps.LatLng(-25.383948, -49.246980),
+      zoom: 15,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       scrollwheel:  false,
       styles : mapStylesGray
